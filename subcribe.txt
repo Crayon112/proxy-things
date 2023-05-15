@@ -1,1 +1,0 @@
-https://service-6tjm1nze.trafficmanager.net/sub?target=clash&url=https://yysub.trafficmanager.net/link/JjnhjRDI8V9sJCxq?sub=2&udp=true&extend=1&config=https%3A%2F%2Fgist.githubusercontent.com%2FCrayon112%2Fbab01b18613ff72324ac115a693cd68c%2Fraw%2Fpref.ini
