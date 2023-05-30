@@ -213,5 +213,5 @@ tun:
     - 198.18.0.2:53
 
 rules:
-  PROCESS-NAME, TMMmain.exe, DIRECT
-  PROCESS-NAME, VISmain.exe, DIRECT
+  - PROCESS-NAME, TMMmain.exe, DIRECT
+  - PROCESS-NAME, VISmain.exe, DIRECT
