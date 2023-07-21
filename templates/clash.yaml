@@ -215,3 +215,4 @@ tun:
 rules:
   - PROCESS-NAME, TMMmain.exe, DIRECT
   - PROCESS-NAME, VISmain.exe, DIRECT
+  - PROCESS-NAME, qbittorrent.exe, DIRECT
