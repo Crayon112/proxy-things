@@ -1,11 +1,4 @@
-port: 7890
-socks-port: 7891
-log-level: debug
-allow-lan: true
-bind-address: "*"
 mode: rule
-
-external-controller: 127.0.0.1:9090
 
 # DNS 服务器配置(可选；若不配置，程序内置的 DNS 服务会被关闭)
 dns:
