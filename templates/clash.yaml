@@ -4,36 +4,55 @@ mode: rule
 dns:
   enable: true
   listen: 0.0.0.0:53
-  ipv6: true # 当此选项为 false 时, AAAA 请求将返回空
+  enhanced-mode: fake-ip # 或 redir-host
+  fake-ip-range: 198.18.0.1/16 # Fake IP 地址池 (CIDR 形式)
 
+  ipv6: true # 当此选项为 false 时, AAAA 请求将返回空
+  
   # 以下填写的 DNS 服务器将会被用来解析 DNS 服务的域名
   # 仅填写 DNS 服务器的 IP 地址
   default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-    - 8.8.8.8
+    - 223.5.5.5  # 阿里 DNS
+    - 119.29.29.29  # 腾讯 DNS
+    - 8.8.8.8  # Google DNS
+    - [2400:3200::1]  # 阿里 DNS IPV6
+    - [2402:4e00::]  # 腾讯 DNS IPV6
+    - [2001:4860:4860::8888]  # Google DNS IPV6
   
   # 支持 UDP / TCP / DoT / DoH 协议的 DNS 服务，可以指明具体的连接端口号。
   # 所有 DNS 请求将会直接发送到服务器，不经过任何代理。
   # Clash 会使用最先获得的解析记录回复 DNS 请求
   nameserver:
-    - 223.5.5.5
-    - 114.114.114.114
-    - tls://1.12.12.12:853
-    #- tls://dns.alidns.com:854
-    #- 119.29.29.29
-    - 119.28.28.28
-    - 1.2.4.8
-    - 182.254.116.116
-    
+    - https://doh.pub/dns-query  # DNSPod DoH
+    - https://dns.alidns.com/dns-query  # 阿里 DoH
+    - https://[2400:3200::1]/dns-query  # 阿里 DoH
+    - https://[2400:3200:baba::1]/dns-query # 阿里 DoH
+  
   # 当 fallback 参数被配置时, DNS 请求将同时发送至上方 nameserver 列表和下方 fallback 列表中配置的所有 DNS 服务器.
   # 当解析得到的 IP 地址的地理位置不是 CN 时，clash 将会选用 fallback 中 DNS 服务器的解析结果。
-  #fallback:
-    #- tls://8.8.8.8:853
-    #- tls://1.1.1.1:853
-    
-  enhanced-mode: fake-ip # 或 redir-host
-  fake-ip-range: 198.18.0.1/16 # Fake IP 地址池 (CIDR 形式)
+  fallback:
+    - tls://8.8.8.8:853  # Google DoT
+    - tls://1.1.1.1:853  # Cloudflare DOT
+    - https://dns.google/dns-query    # Google DoH
+    - https://1.1.1.1/dns-query   # Cloudflare DoH
+  
+  fallback-filter:
+      geoip: true # 启用 GeoIP
+      ip-cidr:
+        - 240.0.0.0/4
+        - 127.0.0.1/8
+        - 0.0.0.0/32
+      domain:
+        - +.google.com
+        - +.facebook.com
+        - +.twitter.com
+        - +.youtube.com
+        - +.xn--ngstr-lra8j.com
+        - +.google.cn
+        - +.googleapis.cn
+        - +.googleapis.com
+        - +.gvt1.com
+
   # use-hosts: true # 查询 hosts 并返回 IP 记录
 
   # 在以下列表的域名将不会被解析为 fake ip，这些域名相关的解析请求将会返回它们真实的 IP 地址
