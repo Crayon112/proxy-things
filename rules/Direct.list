@@ -1,2 +1,3 @@
 DOMAIN,raindrop.io
 PROCESS-NAME,git
+PROCESS-NAME,ssh
