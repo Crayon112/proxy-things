@@ -212,12 +212,12 @@ dns:
     - +.shark007.net
     - +.termux.org
 
-tun:
-  enable: true
-  stack: system
-  auto-route: true
-  auto-detect-interface: true
-  dns-hijack:
-    - tcp://8.8.8.8:53
-    - tcp://1.1.1.1:53
-    - 198.18.0.2:53
+# tun:
+#   enable: true
+#   stack: system
+#   auto-route: true
+#   auto-detect-interface: true
+#   dns-hijack:
+#     - tcp://8.8.8.8:53
+#     - tcp://1.1.1.1:53
+#     - 198.18.0.2:53
