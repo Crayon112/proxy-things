@@ -1,8 +1,4 @@
 DOMAIN-SUFFIX,ieee.org
 DOMAIN,raindrop.io
-DST-PORT, 22
-PROCESS-NAME,git
 PROCESS-NAME,ssh
-PROCESS-NAME, TMMmain.exe
-PROCESS-NAME, VISmain.exe
 PROCESS-NAME, qbittorrent.exe
