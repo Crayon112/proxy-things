@@ -2,4 +2,5 @@ DOMAIN-SUFFIX,ieee.org
 DOMAIN,raindrop.io
 PROCESS-NAME,ssh
 PROCESS-NAME, qbittorrent.exe
+DOMAIN-SUFFIX, amazonaws.cn
 DOMAIN-SUFFIX, amazonaws.com.cn
