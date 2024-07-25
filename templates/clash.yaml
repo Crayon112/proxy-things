@@ -4,7 +4,6 @@ mode: rule
 dns:
   enable: true
   listen: 0.0.0.0:53
-  enhanced-mode: redir-host
   
   # enhanced-mode: fake-ip # 或 redir-host
   # fake-ip-range: 198.18.0.1/16 # Fake IP 地址池 (CIDR 形式)
