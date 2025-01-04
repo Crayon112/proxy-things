@@ -5,3 +5,4 @@ PROCESS-NAME, qbittorrent.exe
 DOMAIN-SUFFIX, amazonaws.cn
 DOMAIN-SUFFIX, amazonaws.com.cn
 DOMAIN-SUFFIX, oaifree.com
+DOMAIN-SUFFIX, gpt.tutoreva.com
